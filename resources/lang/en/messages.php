@@ -1504,4 +1504,5 @@
   'People Number Selected' => 'People Number Selected',
   'Not_available' => 'Not available',
   'app_activation' => 'App activation',
+  'hello' => 'Hello',
 );
