@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin;
 use App\Model\Branch;
 use App\Model\Category;
+use App\Model\DeliveryMan;
+use App\Model\Driver;
 use App\Model\Order;
 use App\Model\OrderDetail;
 use App\Model\Product;
@@ -66,6 +68,9 @@ class DashboardController extends Controller
         $data['order'] = Order::count();
         $data['category'] = Category::where('parent_id', 0)->count();
         $data['branch'] = Branch::count();
+        $data['delivery_man'] = DeliveryMan::count();
+        $data['drivers'] = Driver::count();
+
 
         $data['top_sell'] = $top_sell;
         $data['most_rated_products'] = $most_rated_products;

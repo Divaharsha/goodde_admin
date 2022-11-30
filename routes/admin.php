@@ -124,6 +124,17 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
                 Route::get('list', 'DeliveryManController@reviews_list')->name('list');
             });
         });
+        
+        Route::group(['prefix' => 'driver', 'as' => 'driver.', 'middleware' => ['module:driver_management']], function () {
+            Route::get('add', 'DriverController@index')->name('add');
+            Route::post('store', 'DriverController@store')->name('store');
+            Route::get('list', 'DriverController@list')->name('list');
+            Route::get('preview/{id}', 'DriverController@preview')->name('preview');
+            Route::get('edit/{id}', 'DriverController@edit')->name('edit');
+            Route::post('update/{id}', 'DriverController@update')->name('update');
+            Route::delete('delete/{id}', 'DriverController@delete')->name('delete');
+            Route::post('search', 'DriverController@search')->name('search');
+        });
 
         Route::group(['prefix' => 'notification', 'as' => 'notification.', 'middleware' => ['module:business_management']], function () {
             Route::get('add-new', 'NotificationController@index')->name('add-new');

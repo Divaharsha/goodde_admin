@@ -22,7 +22,7 @@
         <div class="pb-3">
             <div class="row align-items-center">
                 <div class="col-sm mb-2 mb-sm-0">
-                    <h1 class=""><i class="tio-add-circle-outlined"></i> {{translate('add')}} {{translate('new')}} {{translate('deliveryman')}}</h1>
+                    <h1 class=""><i class="tio-add-circle-outlined"></i> {{translate('add')}} {{translate('new')}} {{translate('driver')}}</h1>
                 </div>
             </div>
         </div>

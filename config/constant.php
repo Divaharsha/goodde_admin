@@ -24,6 +24,7 @@ const MANAGEMENT_SECTION = [
     'business_management' => 'business_management',
     'employee_management' => 'employee_management',
     'deliveryman_management' => 'deliveryman_management',
+    'driver_management' => 'driver_management',
     'customer_management' => 'customer_management',
     'kitchen_management' => 'kitchen_management',
     'table_management' => 'table_management',

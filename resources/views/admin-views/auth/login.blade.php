@@ -48,7 +48,7 @@
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main" class="main">
     <div class="position-fixed top-0 right-0 left-0 bg-img-hero"
-         style="height: 100%; background-image: url({{asset('public/assets/admin')}}/svg/components/login-background.png);">
+         style="height: 100%; background-image: url({{asset('public/assets/admin')}}/svg/components/login-background.jpg);">
     </div>
 
     <!-- Content -->
