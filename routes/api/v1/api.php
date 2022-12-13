@@ -73,6 +73,9 @@ Route::group(['namespace' => 'Api\V1', 'middleware' => 'localization'], function
     Route::group(['prefix' => 'banners'], function () {
         Route::get('/', 'BannerController@get_banners');
     });
+    Route::group(['prefix' => 'drivers'], function () {
+        Route::get('/', 'DriverController@get_drivers');
+    });
 
     Route::group(['prefix' => 'notifications'], function () {
         Route::get('/', 'NotificationController@get_notifications');

@@ -205,6 +205,7 @@ class DriverController extends Controller
         $driver->vehicle_type = $request->vehicle_type;
         $driver->vehicle_number = $request->vehicle_number;
         $driver->vehicle_image = $vehicle_image;
+        $driver->status = $request->status;
         $driver->image = $request->has('image') ? Helpers::update('driver/', $driver->image, 'png', $request->file('image')) : $driver->image;
         $driver->rc_image = $request->has('rc_image') ? Helpers::update('driver/driver-proof/', $driver->image, 'png', $request->file('rc_image')) : $driver->rc_image;
         $driver->license_image = $request->has('license_image') ? Helpers::update('driver/driver-proof/', $driver->license_image, 'png', $request->file('license_image')) : $driver->license_image;

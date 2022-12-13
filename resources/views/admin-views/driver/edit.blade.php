@@ -205,6 +205,21 @@
                                         src="{{asset('storage/app/public/driver').'/'.$driver['image']}}" alt="profile image"/>
                                 </center>
                    </div>
+                   <div class="row">
+                        <div class="form-group">
+                            <div class='col-md-4'>
+                                    <label class="control-label">Stock</label> <i class="text-danger asterik">*</i>
+                                    <div id="status" class="btn-group">
+                                        <label class="btn btn-danger" data-toggle-class="btn-default" data-toggle-passive-class="btn-default">
+                                            <input type="radio" name="status" value="0" <?= ($driver['status']== 0) ? 'checked' : ''; ?>> Not-Available
+                                        </label>
+                                        <label class="btn btn-success" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                            <input type="radio" name="status" value="1" <?= ($driver['status'] == 1) ? 'checked' : ''; ?>> Available
+                                        </label>
+                                    </div>
+                            </div>
+                        </div>
+                   </div>
                 
                     <button type="submit" class="btn btn-primary">{{translate('submit')}}</button>
                 </form>
