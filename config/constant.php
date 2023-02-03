@@ -29,6 +29,7 @@ const MANAGEMENT_SECTION = [
     'kitchen_management' => 'kitchen_management',
     'table_management' => 'table_management',
     'report_management' => 'report_management',
+    'vehicle_management' => 'vehicle_management',
 ];
 
 //order status

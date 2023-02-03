@@ -1545,4 +1545,11 @@
   'vehicle Number' => 'Vehicle Number',
   'Driver' => 'Driver',
   'Driver Preview' => 'Driver Preview',
+  'GoodDe Admin' => 'GoodDe Admin',
+  'Vehicles' => 'Vehicles',
+  'Vehicles Table' => 'Vehicles Table',
+  'vehicle_image' => 'Vehicle image',
+  'Vehicle List' => 'Vehicle List',
+  'Vehicle Image' => 'Vehicle Image',
+  'Profile Image' => 'Profile Image',
 );

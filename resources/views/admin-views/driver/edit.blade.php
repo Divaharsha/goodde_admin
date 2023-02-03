@@ -128,7 +128,7 @@
                                 <select name="vehicle_type" class="form-control">
                                     <option value="0" {{$driver['vehicle_type']==0?'selected':''}}>{{translate('all')}}</option>
                                     @foreach(\App\Model\Category::all() as $category)
-                                        <option value="{{$category['name']}}" {{$driver['vehicle_type']==$category['name']?'selected':''}}>{{$category['name']}}</option>
+                                        <option value="{{$category['id']}}" {{$driver['vehicle_type']==$category['name']?'selected':''}}>{{$category['name']}}</option>
                                     @endforeach
                                 </select>
                             </div>

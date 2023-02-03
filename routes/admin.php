@@ -136,6 +136,10 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::post('search', 'DriverController@search')->name('search');
         });
 
+        Route::group(['prefix' => 'vehicle', 'as' => 'vehicles.', 'middleware' => ['module:vehicle_management']], function () {
+            Route::get('list', 'DriverController@Vehiclelist')->name('list');
+        });
+
         Route::group(['prefix' => 'notification', 'as' => 'notification.', 'middleware' => ['module:business_management']], function () {
             Route::get('add-new', 'NotificationController@index')->name('add-new');
             Route::post('store', 'NotificationController@store')->name('store');

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\DB;
 
 class DriverController extends Controller
 {
@@ -60,27 +61,6 @@ class DriverController extends Controller
         ]);
     }
 
-    // public function reviews_list(Request $request)
-    // {
-    //     $query_param = [];
-    //     $search = $request['search'];
-    //     if ($request->has('search')) {
-    //         $key = explode(' ', $request['search']);
-    //         $delivery_men = DeliveryMan::where(function ($q) use ($key) {
-    //             foreach ($key as $value) {
-    //                 $q->orWhere('f_name', 'like', "%{$value}%")
-    //                     ->orWhere('l_name', 'like', "%{$value}%");
-    //             }
-    //         })->pluck('id')->toArray();
-    //         $reviews = DMReview::whereIn('delivery_man_id', $delivery_men);
-    //         $query_param = ['search' => $request['search']];
-    //     }else{
-    //         $reviews = new DMReview();
-    //     }
-
-    //     $reviews = $reviews->with(['delivery_man', 'customer'])->latest()->paginate(Helpers::getPagination())->appends($query_param);
-    //     return view('admin-views.delivery-man.reviews-list', compact('reviews', 'search'));
-    // }
 
     public function preview($id)
     {
@@ -237,5 +217,33 @@ class DriverController extends Controller
         $driver->delete();
         Toastr::success(translate('Driver removed Successfully!'));
         return back();
+    }
+
+
+    
+    public function Vehiclelist(Request $request)
+    {
+        $query_param = [];
+        $search = $request['search'];
+        if ($request->has('search')) {
+            $key = explode(' ', $request['search']);
+            $vehicle = Driver::where(function ($q) use ($key) {
+                foreach ($key as $value) {
+                    $q->orWhere('drivers.name', 'like', "%{$value}%")
+                        ->orWhere('drivers.mobile', 'like', "%{$value}%")
+                        ->orWhere('drivers.email', 'like', "%{$value}%")
+                        ->orWhere('categories.name', 'like', "%{$value}%")
+                        ->orWhere('drivers.vehicle_number', 'like', "%{$value}%");
+                }
+            });
+            $query_param = ['search' => $request['search']];
+        }else{
+            $vehicle = new Driver();
+        }
+
+        $vehicles = $vehicle->join('categories', 'drivers.vehicle_type', '=','categories.id')
+        ->select('drivers.id AS id','drivers.name AS driver_name','drivers.*','drivers.image','categories.name AS category_name')
+        ->latest()->paginate(Helpers::getPagination())->appends($query_param);
+        return view('admin-views.vehicles.list', compact('vehicles', 'search',));
     }
 }

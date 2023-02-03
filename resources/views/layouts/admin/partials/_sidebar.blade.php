@@ -531,7 +531,7 @@
                             <li class="navbar-vertical-aside-has-menu {{Request::is('admin/driver/index')?'active':''}}">
                                 <a class="js-navbar-vertical-aside-menu-link nav-link"
                                    href="{{route('admin.driver.list')}}">
-                                    <i class="tio-car nav-icon"></i>
+                                   <i class="fa fa-user-circle nav-icon"></i>
                                     <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
                                         {{translate('drivers')}}
                                     </span>
@@ -541,6 +541,26 @@
                           
                             <!-- End Pages -->
                         @endif
+
+
+
+
+                        @if(Helpers::module_permission_check(MANAGEMENT_SECTION['vehicle_management']))
+                          
+                          <!-- Pages -->
+                          <li class="navbar-vertical-aside-has-menu {{Request::is('admin/vehicles/list')?'active':''}}">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                   href="{{route('admin.vehicles.list')}}">
+                                   <i class="tio-car nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        {{translate('Vehicles')}}
+                                    </span>
+                                </a>
+                            </li>
+
+                        
+                          <!-- End Pages -->
+                      @endif
 
                         @if(Helpers::module_permission_check(MANAGEMENT_SECTION['customer_management']))
                             <!-- <li class="nav-item">

@@ -44,4 +44,29 @@ class CategoryController extends Controller
             return response()->json([], 200);
         }
     }
+    public function CreateCategory(Request $request) {
+
+        //image upload
+       //  if (!empty($request->file('image'))) {
+       //     $image_name = Helpers::upload('category/', 'png', $request->file('image'));
+       // } else {
+       //     $image_name = 'def.png';
+       // }
+       // if (!empty($request->file('banner_image'))) {
+       //     $banner_image_name = Helpers::upload('category/banner/', 'png', $request->file('banner_image'));
+       // } else {
+       //     $banner_image_name = 'def.png';
+       // }
+
+       
+       $category = new Category;
+       $category->name = $request->name;
+       $category->image = $image_name;
+       $category->banner_image = $banner_image_name;
+       $category->save();
+   
+       return response()->json([
+           "message" => "Category created Successfully"
+       ], 201);
+     }
 }

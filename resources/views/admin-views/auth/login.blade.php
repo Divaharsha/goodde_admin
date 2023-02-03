@@ -71,21 +71,17 @@
 
                             <div class="text-center">
                                 <div class="mb-5">
-                                    <h1 class="display-4"> {{translate('sign_in')}}</h1>
-                                    <p>{{translate('want to login your branches?')}}
-                                        <a href="{{route('branch.auth.login')}}">
-                                            {{translate('branch')}} {{translate('login')}}
-                                        </a>
-                                    </p>
+                                    <h1 class="display-4"> {{translate('GoodDe Admin')}}</h1>
+                                    
                                 </div>
-                                {{--<a class="btn btn-lg btn-block btn-white mb-4" href="#">
+                                <a class="btn btn-lg btn-block btn-white mb-4" href="#">
                                     <span class="d-flex justify-content-center align-items-center">
                                       <img class="avatar avatar-xss mr-2"
-                                           src="{{asset('public/assets/admin')}}/svg/brands/google.svg" alt="Image Description">
+                                           src="{{asset('public/assets/admin')}}/svg/brands/google.png" alt="Image Description">
                                       Sign in with Google
                                     </span>
                                 </a>
-                                <span class="divider text-muted mb-4">OR</span>--}}
+                                <span class="divider text-muted mb-4">OR</span>
                             </div>
 
                             <!-- Form Group -->
